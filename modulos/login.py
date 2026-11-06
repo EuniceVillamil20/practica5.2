@@ -55,3 +55,10 @@ def login():
                 "Ingrese su usuario y contraseña."
             )
         else:
+            resultado = verificar_usuario(
+                usuario,
+                contrasena
+            )
+
+            if resultado:
+                st.session_state["sesion_iniciada"] = True
