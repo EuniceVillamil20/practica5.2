@@ -13,10 +13,10 @@ def verificar_usuario(usuario, contrasena):
     try:
         cursor = conexion.cursor()
 
-        consulta = """
-            SELECT Id_Usuario
-            FROM USUARIO
-            WHERE Usuario = %s AND Contrasena = %s
+                consulta = """
+            SELECT id_usuario
+            FROM Usuarios
+            WHERE usuario = %s AND `contraseña` = %s
             LIMIT 1
         """
 
