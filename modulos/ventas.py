@@ -37,8 +37,8 @@ def mostrar_venta():
 
                 cursor = conexion.cursor()
 
-                consulta = """
-                    INSERT INTO VENTAS
+                                consulta = """
+                    INSERT INTO Ventas
                     (Producto, Cantidad)
                     VALUES (%s, %s)
                 """
