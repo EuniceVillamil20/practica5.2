@@ -13,7 +13,7 @@ def verificar_usuario(usuario, contrasena):
     try:
         cursor = conexion.cursor()
 
-                consulta = """
+        consulta = """
             SELECT id_usuario
             FROM Usuarios
             WHERE usuario = %s AND `contraseña` = %s
@@ -62,3 +62,12 @@ def login():
 
             if resultado:
                 st.session_state["sesion_iniciada"] = True
+                st.session_state["usuario"] = usuario
+                st.success(
+                    "Sesión iniciada correctamente."
+                )
+                st.rerun()
+            else:
+                st.error(
+                    "Usuario o contraseña incorrectos."
+                )
